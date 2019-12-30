@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | News
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+
+{% block breadcrumb %} 
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">news</h2>
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                        <li>news</li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+{% endblock %}
+
+
+{% block content %} 
+
+
+
+<!--================================
+     START CAUSES DETAIL AREA
+=================================-->
+<section class="causes-detail-area news-detail-area">
+    <div class="container">
+        <div class="row blog-content-wrap">
+            <div class="col-lg-8">
+                <div class="blog-content">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="/media/{{blog_detail.photo}}" alt="" width="770" height="414">
+                            <span class="blog__date">{{blog_detail.create_date|date}}</span>
+                        </div>
+                        
+        <div class="section-icon">
+                            <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                        </div>
+                        <div class="blog-inner-content">
+                            <div class="inner-causes-box">
+                                <h3 class="blog__title"><a href="#">{{blog_detail.title|title}}</a></h3>
+                                <ul class="blog__list">
+                                    <li class="blog__dot-active"><a href="#">{{blog_detail.credit}}</a></li>
+                                    <li><a href="#">{{ blog_comment_count }} comment{{ blog_comment_count|pluralize }}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="blog-inner-content-2">
+                        <p class="causes__text">
+                        {{blog_detail.message|safe}} 
+                        </p>
+                            
+                            <div class="news-tags">
+                            {% if blog_tags %}
+                                <div class="news-tag-item-left">
+                                    <span class="news-meta-tags">
+                                        <span class="news-meta-title">Tags</span>
+                                        {% for tag in blog_tags %}
+                                        <a href="#">{{tag}}</a>
+                                        {% endfor %}
+                                    </span>
+                                </div>
+                            {% endif %}
+                                <div class="news-tag-item-right">
+                                    <ul class="news-share">
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="single-comment">
+                                <div class="post__boxed">
+                                    <div class="post__boxed-img">
+                                        <img src="images/post-box-img.jpg" alt="">
+                                    </div>
+                                    <div class="post__boxed-content">
+                                        <h3 class="post__boxed-title">Author: {{blog_detail.author}}</h3>
+                                        <p class="post__boxed-desc">
+                                           {{blog_detail.author.intro}}
+                                            </p>
+                                    </div>
+                                </div><!-- end post__boxed -->
+                                <div class="comment__boxed">
+                                    <h3 class="single__comment-title">Comments</h3>
+                                    <ul class="comments-list">
+                                        <li>
+                                        {% if blog_comments %}
+                                        {% for item in blog_comments %}
+                                            <div class="comment">
+                                                <div class="avatar-img">
+                                                    <img class="avatar__img" alt="" src="images/comment-avatar.jpg">
+                                                </div>
+                                                <div class="comment-body">
+                                                    <div class="meta-data">
+                                                        <h4 class="comment__author">
+                                                            {{ item.fullname | title }}
+                                                            <span class="comment__date">{{ item.create_date }}</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="comment-content">
+                                                     
+                                                        <p class="comment__text">
+                                                            {{ item.comment }} 
+                                                            </p>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end comment -->
+                                            {% endfor %}
+                                            {% else %}
+                                            <div class="comment-body">
+                                                    
+                                                    <div class="comment-content">
+                                                     
+                                                        <p class="comment__text">
+                                                            No comments yet for this post!
+                                                            </p>
+                                                    </div>
+                                                </div>
+                                          {% endif %}                               
+                                            
+                                        </li>
+                                    </ul>
+                                </div><!-- end comment__boxed -->
+                                <div class="comment__form form-shared">
+                                    <h3 class="single__comment-title">Leave a Comment</h3>
+                                    <form action="{% url 'submission' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="blog_id" value="{{ blog_detail.id }}">
+                                    <input type="hidden" name="blog_title" value="{{ blog_detail.title }}">
+                                        <div class="row">
+                                        {% if user.is_authenticated %}
+                                        <input type="hidden" name="user_id" value="{{ user.id }}">
+                                        <input type="hidden" name="fullname" value="{{ user.first_name }} {{ user.last_name }}">
+                                        <input type="hidden" name="email" value="{{ user.email }}">
+                                        <div class="col-lg-6 col-sm-6">
+                                              <h4>Hello {{ user.first_name }},</h4>  
+                                        </div>
+                                        {% else %}
+                                        <input type="hidden" name="user_id" value="-1">
+                                            <div class="col-lg-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Full Name" name="fullname" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" placeholder="Email Address" name = "email" required>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <textarea class="textarea" name="comment" placeholder="Leave a Comment"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <button class="theme-btn submit__btn">submit now</button>
+                                            </div>
+                                        </div><!-- end row -->
+                                    </form>
+                                </div><!-- end comment__form -->
+                            </div><!-- end single__comments -->
+                        </div><!-- end blog-inner-content-2 -->
+                    </div><!-- end blog-item -->
+                </div><!-- end blog-content -->
+            </div><!-- end col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="sidebar-shared">
+                   
+                    <div class="side-widget">
+                        <h2 class="widget__title">Recent Posts</h2>
+                        
+                        
+                        {% if recent_blogs %}
+                        {% for item in recent_blogs %}
+                        <div class="author-box recent-donate-item">
+                            <div class="author__avatar">
+                                 <img src="/media/{{item.photo}}" alt="" width = "59" height="59">
+                            </div>
+                            <div class="author__detail">
+                                <h4 class="author__title author__title2"><a href="{% url 'blog' item.id %}">{{ item.title|title }}</a></h4>
+                            </div>
+                        </div><!-- end author-box -->
+                        
+                        {% endfor %}
+                        
+                        {% else %}
+                        <div class="author-box recent-donate-item">
+                            <div class="author__avatar">
+                                <img src="images/author-avatar5.jpg" alt="">
+                            </div>
+                            <div class="author__detail">
+                                <h4 class="author__title author__title2"><a href="single-news.html">No new posts...</a></h4>
+                            </div>
+                        </div><!-- end author-box -->
+                        
+                      {% endif %}
+                    </div><!-- end side-widget -->
+                    
+                </div><!-- end sidebar-shared -->
+            </div><!-- end col-lg-4 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end causes-area -->
+<!--================================
+        END CAUSES AREA
+=================================-->
+
+
+
+
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

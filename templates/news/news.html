@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | News
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+
+
+{% block breadcrumb %} 
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">news</h2>
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                        <li>news</li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+{% endblock %}
+
+
+{% block content %} 
+
+
+<!-- ================================
+    START BLOG AREA
+================================= -->
+<section class="blog-area blog-area2">
+    <div class="container">
+        <div class="row recent-post-wrap">
+        {% if get_news %}
+	        {% for item in get_news %}
+            <div class="col-lg-6 col-sm-6">
+                <div class="recent-item">
+                    <div class="recent__img">
+                        <span class="meta__date-date meta__date-date{{ forloop.counter}}">{{ item.create_date|date}}</span>
+                        <img  src="/media/{{item.photo}}" alt="service-image">
+                    </div><!-- end recent__img -->
+                    <div class="news__content">
+                        <h3 class="news__content-title"><a href="{% url 'blog' item.id %}">{{item.title|title}}</a></h3>
+                        <ul class="news__content-list">
+                            <li class="news__content-active__dot"><a href="#">{{item.credit}}</a></li>
+                           
+                        </ul>
+                        <p class="news__content-text">
+                           {{item.message|truncatewords_html:25|safe}}
+                        </p>
+                        <a href="{% url 'blog' item.id %}" class="theme-btn">read more</a>
+                    </div><!-- end news__content -->
+                </div><!-- end recent-item-->
+            </div><!-- end col-lg-6 -->
+		{% endfor %}
+                    
+            {% else %}
+            <div>
+                    
+            	<h5>Exciting news are coming soon!</h5>
+            
+            </div>
+            {% endif %}
+
+
+      
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end blog-area -->
+<!-- ================================
+    END BLOG AREA
+================================= -->
+
+<!-- ================================
+    START CTA AREA
+================================= -->
+<section class="cta-area cta-area2 text-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="cta-item">
+                    <h3 class="cta__title">Become a Volunteer</h3>
+                    <p class="cta__desc">Join your hand with us for annual Malawi Missions!</p>
+                    <a href="{% url 'volunteer' %}" class="theme-btn">join us now</a>
+                </div><!-- end cta-item -->
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end cta-area -->
+<!-- ================================
+    END CTA AREA
+================================= -->
+
+
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

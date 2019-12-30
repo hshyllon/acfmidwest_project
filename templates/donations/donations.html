@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | Donations
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+
+{% block breadcrumb %} 
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">donate now</h2>
+                    <ul class="breadcrumb__list breadcrumb__list2">
+                        <li class="active__list-item"><a href="index.html">home</a></li>
+                        <li class="active__list-item">causes</li>
+                        <li>donate now</li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+{% endblock %}
+
+{% block content %} 
+
+
+<!--================================
+     START DONATE AREA
+=================================-->
+<section class="donate-area2">
+    <div class="container">
+    <div class="section-icon">
+                            <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                        </div>
+        <div class="row donate-content-wrap">
+            <div class="col-lg-8">
+                <div class="donate-item">
+                    <h3 class="donate__title">Enter Your Donation</h3>
+                    <div class="form-shared">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="yellow-form">
+                                        <input type="number" class="form-control">
+                                        <span class="dollar-sign">$</span>
+                                        <span class="number-symble">.00</span>
+                                    </div>
+                                </div>
+                            </div><!-- end row -->
+                        </form>
+                    </div><!-- end form-shared -->
+                </div><!-- end donate-item -->
+                <div class="donate-item">
+                    <h3 class="donate__title">Personal Info</h3>
+                    <div class="form-shared">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <div class="select-group">
+                                            <select class="select-option">
+                                                <option value="Country">Country</option>
+                                                <option value="usa">Usa</option>
+                                                <option value="Uk">Uk</option>
+                                                <option value="Pakistan">Pakistan</option>
+                                                <option value="Bangladesh">Bangladesh</option>
+                                                <option value="India">India</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea class="textarea" name="message" placeholder="Leave a Comment"></textarea>
+                                </div>
+                            </div><!-- end row -->
+                        </form>
+                    </div><!-- end form-shared -->
+                </div><!-- end donate-item -->
+                <div class="donate-item">
+                    <h3 class="donate__title">Payment Info</h3>
+                    <div class="form-shared">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Card Number">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="MM/YY">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Card Code (CVC)">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Billing Address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="City">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <div class="select-group">
+                                            <select class="select-option">
+                                                <option value="Country">Country</option>
+                                                <option value="usa">Usa</option>
+                                                <option value="Uk">Uk</option>
+                                                <option value="Pakistan">Pakistan</option>
+                                                <option value="Bangladesh">Bangladesh</option>
+                                                <option value="India">India</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button class="theme-btn submit__btn">donate now</button>
+                                </div>
+                            </div><!-- end row -->
+                        </form>
+                    </div><!-- end form-shared -->
+                </div><!-- end donate-item -->
+            </div><!-- end col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="sidebar-shared">
+                    
+                    <div class="side-widget">
+                        <div class="author-box">
+                            <div class="author__avatar">
+                                <img src="images/author-avatar.jpg" alt="">
+                            </div>
+                            <div class="author__detail">
+                                <span class="author__meta">created april 11, 2019</span>
+                                <h4 class="author__title">Organizer: <a href="#">Dr. Jimmy Adegoke</a></h4>
+                                <ul class="author__list">
+                                    <li><i class="fa fa-tag"></i> Missions</li>
+                                    <li><i class="fa fa-map-marker"></i> Malawi, Africa</li>
+                                </ul>
+                            </div>
+                        </div><!-- end author-box -->
+                    </div><!-- end side-widget -->
+                </div><!-- end sidebar-shared -->
+            </div><!-- end col-lg-4 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end donate-area2 -->
+<!--================================
+        END DONATE AREA
+=================================-->
+
+
+
+
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

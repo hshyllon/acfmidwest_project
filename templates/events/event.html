@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | Event
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+
+{% block breadcrumb %} 
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">event</h2>
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                        <li><a href="{% url 'events' %}">events</a></li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<!--================================
+         START CAUSES AREA
+=================================-->
+<section class="event-detail-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-content">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="/media/{{event_detail.photo2}}" alt="">
+                            <span class="blog__tag">
+                                <span class="date__num-text">{{event_detail.start_day|date:"d"}}</span>
+                                <span class="date__mon-text">{{ event_detail.start_day|date:"M"}}</span>
+                            </span>
+                        </div>
+                    </div><!-- end blog-item -->
+                </div><!-- end blog-content -->
+            </div><!-- end col-lg-12 -->
+            <div class="col-lg-8">
+            
+        <div class="section-icon">
+                            <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                        </div>
+                <div class="event-detail-content">
+                    <div class="event-detail-item">
+                        <h3 class="event__title">{{ event_detail.title }}</h3>
+                     
+                        <p class="event__text">
+                           {{event_detail.description|safe}}
+                        </p>
+                        
+                    </div>
+                    <div class="event-detail-item">
+                        <h3 class="event__title event__title2">Event Requirements</h3>
+                        <p class="event__text">
+                            {{event_detail.requirement|safe}}
+                        </p>
+                    </div>
+                    <div class="event-detail-btn">
+                        <a href="#" class="theme-btn">register now</a>
+                    </div>
+                </div>
+            </div><!-- end col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="event-detail-sidebar">
+                    <div class="event-detail-item">
+                        <h3 class="event__title">Event Details</h3>
+                        <ul class="event__list">
+                            <li><span>Starting Time:</span> {{ event_detail.start_time }} to {{ event_detail.end_time }} </li>
+                            <li><span>Date:</span>{{ event_detail.start_day }}</li>
+                            {% if event_detail.children_cost > 0 %}
+                            <li><span>Children Cost:</span>${{event_detail.children_cost}}</li>
+                            {% endif %}
+                            {% if event_detail.youth_cost > 0 %}
+                            <li><span>Youth Cost:</span>${{event_detail.youth_cost}}</li>
+                            {% endif %}
+                            {% if event_detail.adult_cost > 0 %}
+                            <li><span>Adult Cost:</span>${{event_detail.adult_cost}}</li>
+                            {% endif %}
+                            <li><span>Phone:</span>666 888 0000</li>
+                            <li><span>Location:</span>{{ event_detail.location }}</li>
+                        </ul>
+                    </div>
+                  
+                </div>
+            </div><!-- end col-lg-4 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end causes-area -->
+<!--================================
+        END CAUSES AREA
+=================================-->
+<!-- ================================
+    START CTA AREA
+================================= -->
+<section class="cta-area cta-area2 text-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="cta-item">
+                    <h3 class="cta__title">Become a Volunteer</h3>
+                    <p class="cta__desc">Join your hand with us for annual Malawi Missions!</p>
+                    <a href="{% url 'volunteer' %}" class="theme-btn">join us now</a>
+                </div><!-- end cta-item -->
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end cta-area -->
+<!-- ================================
+    END CTA AREA
+================================= -->
+
+
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

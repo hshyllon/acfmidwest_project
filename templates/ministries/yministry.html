@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | About Us
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+{% block breadcrumb %} 
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">ministries</h2>
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                        <li class="active__list-item">causes</li>
+                        <li><a href="{% url 'ministries' %}">ministries</a></li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+{% endblock %}
+
+{% block content %} 
+
+<!--================================
+         START ABOUT AREA
+=================================-->
+<section class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="about-large-img">
+                    <img src="{% static 'images/about-img.jpg' %}" alt="">
+                </div><!-- end about-large-img-->
+            </div><!-- end col-lg-12 -->
+
+            <div class="col-lg-12">
+                <div class="about-heading">
+                    <div class="section-heading">
+                        <div class="section-icon">
+                            <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                        </div>
+                        <h2 class="section__title">Young Adults Ministry</h2>
+                        <p class="section__meta">learn about our Young Adults Ministry</p>
+                       <p class="section__desc">
+                           The Young Adult (YA) Ministry operates under the African Christian fellowship and was established to cater 
+                           to the needs of Young Adults defined as adults in college, college graduate/new career (Post-college) age 
+                           group by building relationships and outreach activities.
+                       </p>
+                       <p>
+                       The Young Adult (YA) Ministry operates under the African Christian fellowship and was established to develop Young 
+                       Adults mainly of African descents into the next generation of Leaders by catering to their needs and building relationships.
+                       </p>
+                       
+                       <div><br></div>
+                       <div class="event-detail-item">
+                        <h4 class="event__title event__title2">Goals</h4>
+                        </div>
+                       <hr>
+                       <ul >
+                       		<li><i class="fa fa-check"></i> Establish solid/vibrant young adult group in every chapter/state in the Midwest </li>
+                            <li><i class="fa fa-check"></i> Establish a strong connection to youth and young adults in Africa (Networking with Young Adults in Africa) </li>
+                            <li><i class="fa fa-check"></i> Building and developing leadership among African Young Adult in the Midwest</li>
+                             </ul>
+                       
+                       
+                    </div><!-- end section-heading -->
+                </div>
+            </div><!-- end col-lg-7 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end about-area -->
+<!--================================
+        END ABOUT AREA
+=================================-->
+
+
+
+<!--================================
+         START MIXER AREA
+=================================-->
+<section class="mixer-area mixer-area3 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading mixer-heading">
+                    <div class="section-icon">
+                        <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                    </div>
+                    <h2 class="section__title text__white">Who can be an ACF member?</h2>
+                    <p class="about-membership"> Membership is open to all African Christians, as well as to all Christians who have been called to minister to Africa and Africans.
+                    </p>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end mixer-area -->
+<!--================================
+        END MIXER AREA
+=================================-->
+
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

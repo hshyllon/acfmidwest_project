@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+	ACF MIDWEST | Home
+{% endblock %}
+{% block main_header %}
+	{% include "home-header.html" %}
+{% endblock %}
+
+{% block content %}
+<!--================================
+         START MIXER AREA
+=================================-->
+<section class="mixer-area helping-area cat-area text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="section-heading">
+                    <div class="section-icon">
+                        <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                    </div>
+                    <h2 class="section__title">Our Core Initiatives</h2>
+                    <p class="section__meta">browse our values</p>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="helping-item">
+                    <div class="row">
+                        <div class="col">
+                            <div class="helping-cat-item">
+                                <div class="helping-box helping-box1">
+                                    <i class="icon-family"></i>
+                                </div>
+                                <h4><a href="#">family & community</a></h4>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col">
+                            <div class="helping-cat-item">
+                                <div class="helping-box helping-box2">
+                                    <i class="icon-peace"></i>
+                                </div>
+                                <h4><a href="#">reconnecting with africa</a></h4>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col">
+                            <div class="helping-cat-item">
+                                <div class="helping-box helping-box3">
+                                    <i class="icon-target"></i>
+                                </div>
+                                <h4><a href="#">passing the ACF legacy</a></h4>
+                            </div>
+                        </div><!-- end col -->
+                        <div class="col">
+                            <div class="helping-cat-item">
+                                <div class="helping-box helping-box4">
+                                    <i class="icon-charity"></i>
+                                </div>
+                                <h4><a href="#">building bridges</a></h4>
+                            </div>
+                        </div><!-- end col -->
+                        
+                    </div><!-- end row -->
+                </div><!-- end helping-item -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end mixer-area -->
+<!--================================
+        END MIXER AREA
+=================================-->
+<!--================================
+         START CAUSES AREA
+=================================-->
+<section class="causes-area upcoming-event-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="section-heading blog-heading text-center">
+                    <div class="section-icon">
+                        <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                    </div>
+                    <h2 class="section__title">Upcoming Events</h2>
+                    <p class="section__meta">come be a part of our story</p>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+        <div class="row blog-content-wrap">
+            {% if valid_events %}
+	        {% for event in valid_events %}
+            
+            <div class="col-lg-4">
+                <div class="blog-content">
+                    <div class="blog-item blog-item{{ forloop.counter}}">
+                        <div class="blog-img">
+                            <img src="/media/{{event.photo}}" alt="">
+                            <span class="blog__tag blog__tag{{ forloop.counter}}">
+                                <span class="date__num-text">{{ event.start_day|date:"d"}}</span>
+                                <span class="date__mon-text">{{ event.start_day|date:"M"}}</span>
+                            </span>
+                        </div>
+                        <div class="blog-inner-content">
+                            <h3 class="blog__title"><a href="{% url 'event' event.id %}">{{event.title|title}}</a></h3>
+                            <ul class="blog__list">
+                                <li class="blog__dot-active">{{ event.start_time|time:"g:iA"|upper }} to {{ event.end_time|time:"g:iA"|upper }}</li>
+                                <li>{{event.city|title}}</li>                           
+                            </ul>
+                        </div>
+                    </div><!-- end blog-item -->
+                </div><!-- end blog-content -->
+            </div><!-- end col-lg-4 -->
+         	{% endfor %}
+                    
+            {% else %}
+            <div>
+                    
+            	<h5>Exciting events are coming soon!</h5>
+            
+            </div>
+            {% endif %}
+          
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end causes-area -->
+<!--================================
+        END CAUSES AREA
+=================================-->
+
+<!--================================
+         START MIXER AREA
+=================================-->
+<section class="mixer-area mixer-area3 mixer-area4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <div class="section-icon">
+                        <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                    </div>
+                    <h2 class="section__title text__white">We Make a Difference in their Life</h2>
+                    <p class="section__meta">news and updates</p>
+                    <p class="section__desc text__white">
+                        Tincidunt elit magnis nulla facilisis sagittis is maecenas.
+                        Sapien nunced amet ultrices, dolores sit
+                        ipsum velit purus aliquet, massa fringilla leo orci.
+                    </p>
+                    <a href="{% url 'missions' %}" class="theme-btn">learn more</a>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6">
+                <div class="mixer-video-content">
+                    <img src="{% static 'images/mixer-img.jpg' %}" alt="">
+                    <a class="mfp-iframe video-play-btn" href="https://www.youtube.com/watch?v=vN09ivK17e4" title="Play Video"><i class="fa fa-play"></i></a>
+                </div><!-- end mixer-video-content -->
+            </div><!-- end col-lg-6 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end mixer-area -->
+<!--================================
+        END MIXER AREA
+=================================-->
+
+<!-- ================================
+    START BLOG AREA
+================================= -->
+<section class="blog-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="section-heading blog-heading">
+                    <div class="section-icon">
+                        <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                    </div>
+                    <h2 class="section__title">Recent Blog Posts</h2>
+                    <p class="section__meta">news and updates</p>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+        <div class="row recent-post-wrap">
+        {% if latest_news %}
+            <div class="col-lg-6">
+                <div class="recent-item">
+                    <div class="recent__img">
+                        <span class="meta__date-date">{{ latest_news.create_date|date}}</span>
+                        <img  src="/media/{{latest_news.photo}}" alt="service-image">
+                    </div><!-- end recent__img -->
+                    <div class="news__content">
+                        <h3 class="news__content-title"><a href="{% url 'blog' latest_news.id %}">{{latest_news.title|title}}</a></h3>
+                        <ul class="news__content-list">
+                            <li class="news__content-active__dot"><a href="#">{{latest_news.credit}}</a></li>
+                            
+                        </ul>
+                        <p class="news__content-text">{{latest_news.message|truncatewords_html:32|safe}}
+                        </p>
+                        <a href="{% url 'blog' latest_news.id %}" class="theme-btn">read more</a>
+                    </div><!-- end news__content -->
+                </div><!-- end recent-item-->
+            </div><!-- end col-lg-6 -->
+            
+          {% endif %}  
+          {% if other_news %}
+            <div class="col-lg-6">
+                <div class="third-recent-box">
+                    <ul class="third-recent-item">
+                    {% for item in other_news %}
+                        <li>
+                            <div class="recent__img">
+                                <a href="{% url 'blog' item.id %}"><img src="/media/{{item.photo}}" alt="" width="170" height="137" ></a>
+                            </div><!-- end recent__img -->
+                            <div class="recent__content">
+                                <span> {{item.create_date|date}}</span>
+                                <h4><a href="{% url 'blog' item.id %}">{{item.title|title}}</a></h4>
+                            </div>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </div><!-- end third-recent-box -->
+            </div><!-- end col-lg-6 -->
+            {% endif %}
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end blog-area -->
+<!-- ================================
+    END BLOG AREA
+================================= -->
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | About Us
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+{% block breadcrumb %} 
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">about us</h2>
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                        <li class="active__list-item">pages</li>
+                        <li>about</li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+{% endblock %}
+
+{% block content %} 
+
+<!--================================
+         START ABOUT AREA
+=================================-->
+<section class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="about-large-img">
+                    <img src="{% static 'images/about-img.jpg' %}" alt="">
+                </div><!-- end about-large-img-->
+            </div><!-- end col-lg-12 -->
+            <div class="col-lg-5">
+                <div class="about-semi-img">
+                    <img src="{% static 'images/about-img2.jpg' %}" alt="">
+                </div>
+            </div><!-- end col-lg-5 -->
+            <div class="col-lg-7">
+                <div class="about-heading">
+                    <div class="section-heading">
+                        <div class="section-icon">
+                            <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                        </div>
+                        <h2 class="section__title">Discover About ACF MISSION</h2>
+                        <p class="section__meta">learn about our mission statement</p>
+                       <p class="section__desc">
+                           ACF shall be a thriving Christian Community that models integrity, excellence, and compassion to mobilize 
+                           and empower Africans worldwide to impact their generation and Africa
+                       </p>
+                       <hr>
+                       <div class="section-icon">
+                            <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                        </div>
+                       <h2 class="section__title">Discover About ACF HISTORY</h2>
+                       <p class="section__meta">learn about our HISTORY</p>
+                       <p class="section__desc">
+                           	Founded in 1977 as an outreach ministry to African Students, ACF-USA has since grown to over fifty (50) 
+                           	chapters located in several cities across the United States of America.
+							In 1983, the Midwest Region comprised of Minnesota, Minnesota, Ohio, Iowa, Michigan, Illinois, Wisconsin, 
+							Indiana, N. Dakota, S. Dakota, Nebraska, and Kansas was established, with the addition of the Columbus chapter
+							 in 1989. The region held its first conference that year during the Easter weekend at Mishawka, Indiana.
+							Subsequent conferences have been Wisconsin '84 (Twin Cities Chapter), Chicago '85, Wisconsin '86, Michigan '87, 
+							Michigan '88, Chicago '89, Ohio '90, Wisconsin '91 (Twin Cities Chapter), and more.
+                       </p>
+                       
+                       <hr>
+                       <div class="section-icon">
+                            <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                        </div>
+                       <h2 class="section__title">Discover About ACF VALUES</h2>
+                       <p class="section__meta">learn about our values statement</p>
+                       <p class="section__desc">
+                           We believe in:
+                       </p>
+                       <ul >
+                       		<li><i class="fa fa-check"></i> God the creator of all things</li>
+                            <li><i class="fa fa-check"></i> Jesus Christ as God manifested in the flesh</li>
+                            <li><i class="fa fa-check"></i> The Holy Spirit, whose purpose is to empower us and lead us into righteousness</li>
+                            <li><i class="fa fa-check"></i> The Holy Bible as the Word of God</li>
+                            <li><i class="fa fa-check"></i> Love, Sharing, and Fellowship of all Christians</li>
+                             </ul>
+                      
+   
+                    </div><!-- end section-heading -->
+                </div>
+            </div><!-- end col-lg-7 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end about-area -->
+<!--================================
+        END ABOUT AREA
+=================================-->
+
+
+
+<!--================================
+         START MIXER AREA
+=================================-->
+<section class="mixer-area mixer-area3 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading mixer-heading">
+                    <div class="section-icon">
+                        <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                    </div>
+                    <h2 class="section__title text__white">Who can be an ACF member?</h2>
+                    <p class="about-membership"> Membership is open to all African Christians, as well as to all Christians who have been called to minister to Africa and Africans.
+                    </p>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end mixer-area -->
+<!--================================
+        END MIXER AREA
+=================================-->
+<!-- ================================
+    START CTA AREA
+================================= -->
+<section class="cta-area cta-area2 text-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="cta-item">
+                    <h3 class="cta__title">Become a Volunteer</h3>
+                    <p class="cta__desc">Join your hand with us for annual Malawi Missions!</p>
+                    <a href="{% url 'volunteer' %}" class="theme-btn">join us now</a>
+                </div><!-- end cta-item -->
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end cta-area -->
+<!-- ================================
+    END CTA AREA
+================================= -->
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | Gallery Photos
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+{% block breadcrumb %} 
+
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                {% if get_album_images %}
+                    <h2 class="breadcrumb__title">{{album}}</h2>
+                    
+                {% endif %}
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                        <li class="active__list-item">pages</li>
+                        <li class="active__list-item"><a href="{% url 'gallery' %}">gallery</a></li>
+                        <li>photos</li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+
+{% endblock %}
+
+{% block content %} 
+
+<!--================================
+         START GALLERY AREA
+=================================-->
+<section class="gallery-area2">
+    <div class="container">
+        <div class="row">
+            {% if get_album_images %}
+            {% for item in get_album_images %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="gallery-item crop">
+                    <img src="/media/{{item.photo}}" alt="">
+                    <a href="/media/{{item.photo}}" data-lightbox="roadtrip" data-title="Gallery One"> <span class="gallery-icon"></span></a>
+                </div>
+            </div><!-- end col-lg-4 -->
+            {% endfor %}
+            {% endif %}
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end gallery-area2 -->
+<!--================================
+        END GALLERY AREA
+=================================-->
+
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | History
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+
+{% block breadcrumb %} 
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">our history</h2>
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                        <li class="active__list-item">pages</li>
+                        <li>history</li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+{% endblock %}
+
+{% block content %} 
+<!--================================
+         START CAUSES AREA
+=================================-->
+<section class="event-detail-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-content">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{% static 'images/missions.jpg' %}" alt="">
+                            <span class="blog__tag">
+                                <span class="date__num-text"></span>
+                                <span class="date__mon-text"></span>
+                            </span>
+                        </div>
+                    </div><!-- end blog-item -->
+                </div><!-- end blog-content -->
+            </div><!-- end col-lg-12 -->
+            <div class="col-lg-12">
+            <div class="section-icon">
+                            <img src="{% static 'images/section-icon.png' %}" alt="section-icon">
+                        </div>
+                <div class="event-detail-content">
+                    <div class="event-detail-item">
+                        <h3 class="event__title">How we started!</h3>
+                        <p class="event__text">
+                            Founded in 1977 as an outreach ministry to African Students, ACF-USA has since grown to over fifty (50) chapters located in several cities across the United States of America.
+</p><p class="event__text">
+In 1983, the Midwest Region comprised of Minnesota, Minnesota, Ohio, Iowa, Michigan, Illinois, Wisconsin, Indiana, N. Dakota, S. Dakota, Nebraska, and Kansas was established, with the addition of the Columbus chapter in 1989. The region held its first conference that year during the Easter weekend at Mishawka, Indiana.
+</p><p class="event__text">
+Subsequent conferences have been Wisconsin '84 (Twin Cities Chapter), Chicago '85, Wisconsin '86, Michigan '87, Michigan '88, Chicago '89, Ohio '90, Wisconsin '91 (Twin Cities Chapter), and more.
+                        </p>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end causes-area -->
+<!--================================
+        END CAUSES AREA
+=================================-->
+
+<!-- ================================
+    START CTA AREA
+================================= -->
+<section class="cta-area cta-area2 text-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="cta-item">
+                    <h3 class="cta__title">Become a Volunteer</h3>
+                    <p class="cta__desc">Join your hand with us for annual Malawi Missions!</p>
+                    <a href="{% url 'volunteer' %}" class="theme-btn">join us now</a>
+                </div><!-- end cta-item -->
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end cta-area -->
+<!-- ================================
+    END CTA AREA
+================================= -->
+<!-- start back-to-top -->
+
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

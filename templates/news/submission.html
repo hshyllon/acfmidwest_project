@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | Submission Completed
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+
+{% block breadcrumb %} 
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">Submission Completed </h2>
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+{% endblock %}
+{% block content %}
+
+
+<!--================================
+         START CAUSES AREA
+=================================-->
+<section class="event-detail-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-content">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{% static 'images/submission.jpg' %}" alt="">
+                            <span class="blog__tag">
+                                <span class="date__num-text"></span>
+                                <span class="date__mon-text"></span>
+                            </span>
+                        </div>
+                    </div><!-- end blog-item -->
+                </div><!-- end blog-content -->
+            </div><!-- end col-lg-12 -->
+            <div class="col-lg-12">
+                <div class="event-detail-content">
+                    <div class="event-detail-item">
+                        <h3 class="event__title">{{ message }}</h3>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end causes-area -->
+<!--================================
+        END CAUSES AREA
+=================================-->
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}

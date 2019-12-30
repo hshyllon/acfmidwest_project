@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}{% block title %}
+	ACF MIDWEST | Ministries
+{% endblock %}
+
+{% block main_header %}
+	{% include "header.html" %}
+{% endblock %}
+
+
+{% block breadcrumb %} 
+
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-content">
+                    <h2 class="breadcrumb__title">Ministries</h2>
+                    <ul class="breadcrumb__list">
+                        <li class="active__list-item"><a href="{% url 'index' %}">home</a></li>
+                        <li class="active__list-item">causes</li>
+                        <li>ministries</li>
+                    </ul>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+
+
+{% endblock %}
+
+
+{% block content %} 
+
+<!--================================
+         START CAUSES AREA
+=================================-->
+<section class="causes-area causes-area2">
+    <div class="container">
+        <div class="row blog-content-wrap">
+            <div class="col-lg-4">
+                <div class="blog-content">
+                    <div class="blog-item blog-item1">
+                        <div class="blog-img">
+                            <img src="{% static 'images/acf_children.jpg' %}" alt="Children">
+                        </div>
+                       
+                        <div class="blog-inner-content">
+                            <h3 class="blog__title"><a href="{% url 'cministry' %}">Children Ministry</a></h3>
+                            <p class="blog__desc">Aliq is notm hendr erit a augue insu image pellen tes.</p>
+                           
+                            <a href="{% url 'cministry' %}" class="theme-btn">see details</a>
+                        </div>
+                    </div><!-- end blog-item -->
+                </div><!-- end blog-content -->
+            </div><!-- end col-lg-4 -->
+            <div class="col-lg-4">
+                <div class="blog-content">
+                    <div class="blog-item blog-item2">
+                        <div class="blog-img">
+                            <img src="{% static 'images/acf_youth.jpg' %}" alt="Young Adult">
+                        </div>
+                       
+                        <div class="blog-inner-content">
+                            <h3 class="blog__title"><a href="{% url 'yministry' %}">Young Adult Ministry</a></h3>
+                            <p class="blog__desc">Aliq is notm hendr erit a augue insu image pellen tes.</p>
+                           
+                            <a href="{% url 'yministry' %}" class="theme-btn">see details</a>
+                        </div>
+                    </div><!-- end blog-item -->
+                </div><!-- end blog-content -->
+            </div><!-- end col-lg-4 -->
+            <div class="col-lg-4">
+                <div class="blog-content">
+                    <div class="blog-item blog-item3">
+                        <div class="blog-img">
+                            <img src="{% static 'images/acf_adult.jpg' %}" alt="Adult">
+                        </div>
+                        <div class="blog-inner-content">
+                            <h3 class="blog__title"><a href="{% url 'aministry' %}">Adult Ministry</a></h3>
+                            <p class="blog__desc">Aliq is notm hendr erit a augue insu image pellen tes.</p>
+                           
+                            <a href="{% url 'aministry' %}" class="theme-btn">see details</a>
+                        </div>
+                    </div><!-- end blog-item -->
+                </div><!-- end blog-content -->
+            </div><!-- end col-lg-4 -->
+         
+        
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end causes-area -->
+<!--================================
+        END CAUSES AREA
+=================================-->
+
+<!-- ================================
+    START CTA AREA
+================================= -->
+<section class="cta-area cta-area2 text-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="cta-item">
+                    <h3 class="cta__title">Become a Volunteer</h3>
+                    <p class="cta__desc">Join your hand with us for annual Malawi Missions!</p>
+                    <a href="{% url 'volunteer' %}" class="theme-btn">join us now</a>
+                </div><!-- end cta-item -->
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end cta-area -->
+<!-- ================================
+    END CTA AREA
+================================= -->
+
+
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+{% endblock %}
+{% block footer %}
+ {% include "footer.html" %}
+
+{% endblock %}
