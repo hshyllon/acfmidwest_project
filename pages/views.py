@@ -21,7 +21,8 @@ def index(request):
         latest_news = Blog.objects.filter(is_published = True).order_by('-create_date')[0]
         second_to_fourth_news = Blog.objects.filter(is_published = True).order_by('-create_date')[1:4]
     except:
-        pass
+        latest_news = ""
+        second_to_fourth_news = ""
     context = {
         'valid_events' : valid_events,
         'latest_news' : latest_news,
