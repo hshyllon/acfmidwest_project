@@ -25,7 +25,7 @@ SECRET_KEY = '@77-$=*t8zl38*44_gb)k*dsupnntobvmv^e*^km_e9b276!jh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['178.128.181.186']
 
 
 # Application definition
@@ -146,7 +146,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     pass

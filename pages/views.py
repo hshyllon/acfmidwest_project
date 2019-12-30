@@ -17,9 +17,11 @@ def index(request):
         get_events = Event.objects.filter(is_published = True).order_by('start_day')
         # Get valid events 
     valid_events = get_valid_upcoming_events(get_events)
-    
-    latest_news = Blog.objects.filter(is_published = True).order_by('-create_date')[0]
-    second_to_fourth_news = Blog.objects.filter(is_published = True).order_by('-create_date')[1:4]
+    try:
+        latest_news = Blog.objects.filter(is_published = True).order_by('-create_date')[0]
+        second_to_fourth_news = Blog.objects.filter(is_published = True).order_by('-create_date')[1:4]
+    except:
+        pass
     context = {
         'valid_events' : valid_events,
         'latest_news' : latest_news,
