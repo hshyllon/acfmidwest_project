@@ -1,4 +1,4 @@
-Django==2.0.13
+Django==2.2.10
 django-registration-redux==2.6
 django-summernote==0.8.11.4
 Pillow==5.4.1
