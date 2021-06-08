@@ -1,6 +1,6 @@
 Django==2.0.13
 django-registration-redux==2.6
 django-summernote==0.8.11.4
-Pillow==5.4.1
+Pillow==8.2.0
 psycopg2==2.8.4
 pytz==2019.3
